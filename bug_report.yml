@@ -1,0 +1,61 @@
+name: Bug report
+description: Something does not work as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please remove patient data, passwords and other confidential values from logs and screenshots.
+        To report a security vulnerability, do not use this form; see SECURITY.md.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: Settings › Extensions
+      placeholder: "1.1.0"
+    validations:
+      required: true
+  - type: input
+    id: engine-version
+    attributes:
+      label: Engine and version
+      placeholder: "OIE 4.6.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: admin
+    attributes:
+      label: Administrator
+      options:
+        - Classic Administrator
+        - Administrator Launcher
+        - OIE Web Administrator
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open Settings › Dependency Explorer
+        2. Search for ...
+        3. ...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: The relevant part of logs/mirth.log or the Administrator console.
+      render: text
+  - type: input
+    id: size
+    attributes:
+      label: Server size (optional)
+      description: Roughly how many channels the server has.
+      placeholder: "about 200 channels"
