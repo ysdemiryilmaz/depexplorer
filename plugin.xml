@@ -1,0 +1,20 @@
+<pluginMetaData path="depexplorer">
+	<name>Dependency Explorer</name>
+	<author>ysdemiryilmaz</author>
+	<pluginVersion>@VERSION@</pluginVersion>
+	<mirthVersion>@MIRTH_VERSIONS@</mirthVersion>
+	<url>https://github.com/ysdemiryilmaz</url>
+	<description>Shows how channels, code templates, global scripts, the Configuration Map and map variables depend on each other: who-uses-what search, a channel flow graph, broken references and an unused items report.</description>
+	<serverClasses>
+		<string>com.mirth.connect.plugins.depexplorer.server.DepExplorerServicePlugin</string>
+	</serverClasses>
+	<clientClasses>
+		<string>com.mirth.connect.plugins.depexplorer.client.DepExplorerSettingsPlugin</string>
+		<string>com.mirth.connect.plugins.depexplorer.client.DepExplorerChannelTaskPlugin</string>
+	</clientClasses>
+	<library type="SHARED" path="depexplorer-shared.jar" />
+	<library type="SERVER" path="depexplorer-server.jar" />
+	<library type="CLIENT" path="depexplorer-client.jar" />
+	<apiProvider type="SERVLET_INTERFACE" name="com.mirth.connect.plugins.depexplorer.DepExplorerServletInterface" />
+	<apiProvider type="SERVER_CLASS" name="com.mirth.connect.plugins.depexplorer.server.DepExplorerServlet" />
+</pluginMetaData>

@@ -1,0 +1,10 @@
+{
+    "id": "depexplorer",
+    "name": "Dependency Explorer",
+    "version": "1.1.0",
+    "author": "ysdemiryilmaz",
+    "description": "Who uses what: channels, Configuration Map keys, code template functions and map variables; channel flow graph; broken references and unused items. Web half of the Dependency Explorer engine extension.",
+    "enabled": true,
+    "oie": { "apiMin": "4.6" },
+    "client": { "entry": "web/plugin.js" }
+}
