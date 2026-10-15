@@ -68,7 +68,7 @@ still works (e.g. it opens the channel without selecting the step); it never fai
 
 ## 2. Installing, updating, removing
 
-**Install:** *Extensions › Install Extension…* › choose `depexplorer-1.0.0.zip` › restart the Mirth server ›
+**Install:** *Extensions › Install Extension…* › choose `depexplorer-1.1.0.zip` › restart the Mirth server ›
 log in to the Administrator again.
 
 **Update to a newer version:** install the new zip the same way, over the installed one (no need to uninstall
@@ -76,6 +76,20 @@ first), then restart the server.
 
 **Remove:** *Extensions* › select *Dependency Explorer* › *Uninstall*, then restart the server. The plugin keeps
 no settings and creates no database tables, so nothing is left behind.
+
+### Administrator Launcher: start it with `-k`
+
+The plugin's client jars run inside the Administrator, so they are signed. They are signed with a **self-signed
+certificate created on the build machine**, not with a certificate from a public certificate authority. The
+**Administrator Launcher** checks the signature of every jar it downloads from the server and does not trust this
+certificate. It therefore does not start the Administrator, or does not load the plugin.
+
+If you use the Administrator Launcher, start it with the **`-k`** parameter. You can add `-k` to the launcher's
+command line or to the target of its shortcut. With `-k`, the launcher accepts jars signed with a self-signed
+certificate.
+
+To avoid `-k`, build the plugin yourself and sign the jars with a certificate that the launcher machines trust,
+such as a corporate code-signing certificate. See [§16](#16-building-from-source).
 
 ## 3. Where to find it
 
@@ -345,7 +359,8 @@ java Build.java --mirth /opt/mirthconnect
 
 The result is `dist/depexplorer-<version>.zip`. The build compiles Java 8 bytecode, generates the version list in
 `plugin.xml` and signs the client jars with a self-signed key (`keystore/depexplorer-signing.p12`, created on the
-first build; you can replace it with a corporate certificate). `--no-sign` skips signing.
+first build; you can replace it with a corporate certificate). `--no-sign` skips signing. With the self-signed
+key, the Administrator Launcher must be started with `-k`; see [§2](#2-installing-updating-removing).
 
 The web half (`webadmin/web/plugin.tsx`, React/TypeScript) is compiled to `webadmin/web/plugin.js` with Node.js:
 
