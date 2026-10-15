@@ -51,7 +51,7 @@ Author: [ysdemiryilmaz](https://github.com/ysdemiryilmaz) · Version **1.1.0**
 | | |
 |---|---|
 | Open Integration Engine (OIE) | **4.5.2 and later 4.x**. Tested and working on OIE 4.5.2 and OIE 4.6.0. |
-| NextGen Mirth Connect | **4.5.2** works. NextGen's commercial Mirth Connect 4.7.0 is **not supported**: the plugin does not work there. |
+| NextGen Mirth Connect | **4.5.2** works. NextGen's commercial Mirth Connect 4.6.0 and later is **not supported**: the plugin does not work there. |
 | Older versions (3.x, 4.0 – 4.5.1) | Not supported. Mirth refuses to install the plugin there. |
 | Java | The plugin is compiled for Java 8, so it runs on the Java versions every 4.x release uses (8, 11, 17, 21). |
 | Web administrator | Optional. With the OIE Web Support extension (currently OIE 4.6.0), the explorer also appears in the web administrator; see [§11](#11-web-administrator-oie-web-support). |
